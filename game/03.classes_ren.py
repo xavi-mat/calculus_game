@@ -23,4 +23,4 @@ def get_operation(level):
 def add_xp(amount):
     global xp, level
     xp += amount
-    level = int(xp ** 0.5) + 1
+    level = int((xp / 4) ** 0.5) + 1

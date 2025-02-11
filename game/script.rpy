@@ -15,6 +15,7 @@ label main_loop:
 
     $ result = None
     $ operation, result = get_operation(level)
+    $ bonus_points = level
 
     call screen calculus
     $ answer = _return
@@ -23,6 +24,9 @@ label main_loop:
         $ feedback = f"Correct! {operation} = {result}"
         $ feedback_color = "#00FF00"
         $ add_xp(1)
+        $ points += bonus_points
+        $ log.append(f"+{bonus_points}. {feedback}")
+        $ log = log[-25:]
 
     else:
         $ feedback = f"Wrong! {operation} = {result}, not {answer}"
