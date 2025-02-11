@@ -1,32 +1,31 @@
-﻿# Coloca el código de tu juego en este archivo.
+﻿label start:
+    if config.developer:
+        $ _confirm_quit = False
 
-# Declara los personajes usados en el juego como en el ejemplo:
+    scene black
 
-define e = Character("Eileen")
+    # Initialize
+    $ level = 1
 
 
-# El juego comienza aquí.
+    jump main_loop
 
-label start:
 
-    # Muestra una imagen de fondo: Aquí se usa un marcador de posición por
-    # defecto. Es posible añadir un archivo en el directorio 'images' con el
-    # nombre "bg room.png" or "bg room.jpg" para que se muestre aquí.
+label main_loop:
 
-    scene bg room
+    $ result = None
+    $ operation, result = get_operation(level)
 
-    # Muestra un personaje: Se usa un marcador de posición. Es posible
-    # reemplazarlo añadiendo un archivo llamado "eileen happy.png" al directorio
-    # 'images'.
+    call screen calculus
+    $ answer = _return
 
-    show eileen happy
+    if str(result) == answer:
+        $ feedback = f"Correct! {operation} = {result}"
+        $ feedback_color = "#00FF00"
+        $ add_xp(1)
 
-    # Presenta las líneas del diálogo.
+    else:
+        $ feedback = f"Wrong! {operation} = {result}, not {answer}"
+        $ feedback_color = "#FF0000"
 
-    e "Has creado un nuevo juego Ren'Py."
-
-    e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
-
-    # Finaliza el juego:
-
-    return
+    jump main_loop
