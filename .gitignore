@@ -16,6 +16,7 @@
 !game/gui/**/*.otf
 # And CREDITS.txt
 !CREDITS.txt
+!README.md
 # And some things in materials/
 # ...
 # And, of course, this file
