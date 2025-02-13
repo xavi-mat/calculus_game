@@ -27,6 +27,9 @@ label main_loop:
         $ points += bonus_points
         $ log.append(f"+{bonus_points}. {feedback}")
         $ log = log[-25:]
+        $ streak += 1
+        $ streak_bonus = get_streak_bonus(streak)
+        $ points += streak_bonus
 
     else:
         $ feedback = f"Wrong! {operation} = {result}, not {answer}"

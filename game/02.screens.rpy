@@ -10,6 +10,8 @@ screen calculus():
             input
         null height 20
         text "[feedback]" xalign 0.5 color feedback_color
+        if streak_bonus > 0:
+            text "Streak bonus: +[streak_bonus]" xalign 0.5
 
     if bonus_points > 1:
         timer 1:
