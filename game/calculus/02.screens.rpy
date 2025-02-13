@@ -2,7 +2,7 @@ screen calculus():
     vbox:
         align (0.5, 0.4)
         spacing 20
-        text "level: [level] (xp: [xp])" xalign 0.5
+        text "calc_level: [calc_level] (xp: [xp])" xalign 0.5
         text "points: [points] bonus points:+[bonus_points]" xalign 0.5
         hbox:
             xalign 0.5

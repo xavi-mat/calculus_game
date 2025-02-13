@@ -1,10 +1,10 @@
-# CALCULUS
+# CALCULUS & MINIGAMES
 
 ## BACKLOG
 
 
 ## TODO
-
+* Separate in diferenet folders, one for minigame
 
 ## DOING
 
@@ -15,4 +15,4 @@
 * Implement basic calculus game functionality with scoring and feedback
 * Measure time taken to answer each question
 * Give points based on time taken to answer each question
-    * For example: Points = level - seconds taken to answer (minimum 1)
+    * For example: Points = calc_level - seconds taken to answer (minimum 1)

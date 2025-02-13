@@ -1,38 +1,13 @@
 ﻿label start:
     if config.developer:
         $ _confirm_quit = False
-
     scene black
 
-    # Initialize
-    $ level = 1
+    menu minigames_menu:
+        "Calculus":
+            call calc_start
 
+        "- END -":
+            $ renpy.full_restart()
 
-    jump main_loop
-
-
-label main_loop:
-
-    $ result = None
-    $ operation, result = get_operation(level)
-    $ bonus_points = level
-
-    call screen calculus
-    $ answer = _return
-
-    if str(result) == answer:
-        $ feedback = f"Correct! {operation} = {result}"
-        $ feedback_color = "#00FF00"
-        $ add_xp(1)
-        $ points += bonus_points
-        $ log.append(f"+{bonus_points}. {feedback}")
-        $ log = log[-25:]
-        $ streak += 1
-        $ streak_bonus = get_streak_bonus(streak)
-        $ points += streak_bonus
-
-    else:
-        $ feedback = f"Wrong! {operation} = {result}, not {answer}"
-        $ feedback_color = "#FF0000"
-
-    jump main_loop
+    jump minigames_menu
