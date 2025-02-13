@@ -2,11 +2,11 @@
 
 ## BACKLOG
 
-
 ## TODO
-* Separate in diferenet folders, one for minigame
+
 
 ## DOING
+* Minigame: verticalbars
 
 
 ## DONE
@@ -16,3 +16,6 @@
 * Measure time taken to answer each question
 * Give points based on time taken to answer each question
     * For example: Points = calc_level - seconds taken to answer (minimum 1)
+
+### 2025-02-13
+* Separate in diferenet folders, one for minigame
